@@ -15,9 +15,13 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 2021.3.16    主界面，显示温度，日期，时间，定位
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView tvTemperature,tvGPS,tvDate,tvTime,tvState01,tvState02,tvState03,tvState04,tvValue01,tvValue02,tvValue03,tvValue04;
     private static final String TAG="WP_MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         initData();
     }//end onCreate
+
     public void initView(){
 //        初始化控件
         tvState01=(TextView)findViewById(R.id.tvState01);
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         tvValue03.setOnClickListener(this);
         tvValue04.setOnClickListener(this);
     }//end initView
+
     public void initData(){
 //        初始化数据
 //     获取状态栏数据
@@ -63,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //    获取当前时间
         new TimeThread().start();   //启动新线程实时显示时间
     }//end initDate
+
     /**
      * 网络操作子线程
      */
@@ -93,6 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.i(TAG,"str:"+str);
         return str==null?"日期为空":str;
     }//end getDate
+
     //主线程处理消息并更新UI界面
     private Handler mHandler=new Handler(){
         @Override
@@ -110,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }//end switch
         }   //end handleMessage
     };//end Handler
+
     class TimeThread extends Thread{
         public void run(){
             do{

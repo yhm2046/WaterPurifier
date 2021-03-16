@@ -7,10 +7,14 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+/**
+ * 2021.3.16    温度调节界面，并添加返回按钮
+ */
 public class MainActivity2 extends AppCompatActivity {
     private TextView tvTemperature01,tvTemperature02,tvTemperature03,tvBcak;
     private SeekBar sb01,sb02,sb03;
     private static final String TAG = "WP_MainActivity2";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
