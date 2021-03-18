@@ -4,3 +4,4 @@
 系统：Android 10
 
 运行界面如下
+![image](https://github.com/yhm2046/WaterPurifier/blob/master/img/Screenshot_1.png)
